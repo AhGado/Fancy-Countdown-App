@@ -1,0 +1,123 @@
+* {
+  transition: 0.3s;
+  user-select: none;
+  text-shadow: 0 0 2px rgb(0, 0, 0);
+  border: none;
+  border-radius: 0;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+::selection {
+  color: white;
+  background: rgb(255, 30, 30);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+#bgimage {
+  display: inline;
+  position: absolute;
+  background-image: url("images/brick wall (2).jpg");
+  filter: blur(10px);
+  border: none;
+  transform: scale(1);
+  /* Full height */
+  width: 100%;
+  height: 150%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+#bgimage.OFF {
+  filter: brightness(0.3);
+}
+
+#InputNo {
+  position: absolute;
+  display: block;
+  background: rgba(96, 96, 96, 0.5);
+  color: rgba(0, 0, 0,.2);
+  width: 10%;
+  height: 10%;
+  margin: 0 auto;
+  top: 68%;
+  left: 45%;
+  text-align: center;
+  text-shadow: 0 0 5px black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 21pt;
+  user-select: auto red;
+  box-shadow: inset 0 0 10px 5px rgb(36, 36, 36);
+}
+
+#InputNo:focus {
+  color: rgb(52, 255, 214);
+  text-shadow: 0 0 5px;
+  box-shadow: inset 0 0 10px 5px rgb(99, 240, 240);
+  animation: InputLighting normal 5s infinite ease-in-out;
+}
+@keyframes InputLighting {
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#Buttons {
+  position: absolute;
+  margin: 0 auto;
+  height: fit-content;
+  top: 54%;
+  width: 50vw;
+  left: 25%;
+}
+.Button {
+  position: relative;
+  display: inline-block;
+  background: rgb(255, 25, 25);
+  color: white;
+  width: 10vh;
+  height: 5vh;
+  text-align: center;
+  line-height: 250%;
+  font-size: 1vw;
+  vertical-align: middle;
+  font-weight: bold;
+  margin: 5%;
+  border-radius: 5%;
+  box-shadow: 0 .3vw 0px -.05vw rgba(255, 255, 255, .5);
+}
+.Button:hover {
+  color: white;
+  cursor: pointer;
+  text-shadow: 0 0 5px;
+  background: rgb(255, 0, 0);
+}
+.Button.Active, .Button:active {
+  box-shadow: inset  0 .3vw 0px -.05vw rgba(0, 0, 0, 0.492);
+  filter: grayscale();
+  transform: translateY(.3vw) ;
+}
+.Button:active{
+  transition: .1s;
+}
+#OnOffBtn {
+  float: left;
+}
+#StartBtn,
+#StopBtn {
+  float: right;
+}
