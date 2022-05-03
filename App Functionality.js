@@ -76,6 +76,7 @@ $(document).ready(function () {
     $(".Switchable").toggleClass("ON");
     modeSwitch.toggleClass("Active");
     onOffBtn.toggleClass("Active");
+    $("#bgimage").toggleClass("ON");
     counter.css("color", "rgb(25, 25, 25)");
     console.log("image rdy");
     console.log("Screen On!");

@@ -72,26 +72,26 @@
 #Screen.OFF {
   transition: 1s;
   background: rgb(7, 7, 7);
-  animation: OffFlashing normal 10s 10s infinite;
+  /* animation: OffFlashing normal 10s 10s infinite; */
 }
 @keyframes OffFlashing {
   0% {
-    background: rgb(255, 255, 255);
+    background: rgb(200, 200, 200);
   }
 
   1% {
     background: rgb(15, 15, 15);
   }
   2% {
-    background: rgb(200, 200, 200);
+    background: rgb(100, 100, 100);
   }
   3% {
     background: rgb(15, 15, 15);
   }
   6% {
-    background: rgb(100, 100, 100);
+    background: rgb(50, 50, 50);
   }
-  20% {
+  8% {
     background: rgb(7, 7, 7);
   }
 }
