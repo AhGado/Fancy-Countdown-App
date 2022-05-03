@@ -141,7 +141,7 @@ input[type="number"]::-webkit-inner-spin-button {
   --box-shadow-inner-blur: 1vw;
   --box-shadow-inner-intensity: 0vw;
   --box-shadow-blur: 1.333vw;
-  --box-shadow-intensity: 0.267vw;
+  --box-shadow-intensity: 0.167vw;
   display: inline-block;
   --color: rgba(255, 0, 187, .7);
   background: rgba(0, 34, 255, 0.103);
