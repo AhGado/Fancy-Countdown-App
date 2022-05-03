@@ -11,7 +11,16 @@ $(document).ready(function () {
     onOffBtn = $("#OnOffBtn"),
     modeSwitch = $("#ModeSwitch"),
     counter = $("#CounterText"),
-    rotCircle = $("#RotatingCircle");
+    rotCircle = $("#RotatingCircle"),
+    offLogo = $("#offSign");
+
+  // var screenH = $("Screen").css("height"),
+  //     screenW = $("Screen").css("width");
+  //     offLogo.css("display", "block");
+  //     var logoH = toString(screenH / 2) + "px" ;
+  //     var logoW = (screenW / 2) ;
+  //     offLogo.css("top", toString(logoH + "px"));
+  //     offLogo.css("left", toString(logoW + "px"));
 
   onOffBtn.click(function (e) {
     e.preventDefault();
@@ -68,7 +77,7 @@ $(document).ready(function () {
     modeSwitch.toggleClass("Active");
     onOffBtn.toggleClass("Active");
     counter.css("color", "rgb(25, 25, 25)");
-    console.log("image rdy")
+    console.log("image rdy");
     console.log("Screen On!");
 
     if (
@@ -77,6 +86,8 @@ $(document).ready(function () {
       counting == false
     ) {
       startBtn.toggleClass("Active");
+      offLogo.css("display", "none")
+
     } else if (!startBtn.hasClass("Active")) {
       startBtn.toggleClass("Active");
       stopBtn.toggleClass("Active");
@@ -84,7 +95,9 @@ $(document).ready(function () {
 
     if (!stopBtn.hasClass("Active")) {
       stopBtn.toggleClass("Active");
-      counter.text(" ")
+      counter.text(" ");
+      counting = false;
+      offLogo.css("display", "inline-block")
     }
 
     if (rotCircle.hasClass("ON")) {

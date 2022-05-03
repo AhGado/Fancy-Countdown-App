@@ -1,16 +1,16 @@
 /* Frame Settings */
 #ScreenFrame {
   position: absolute;
-  height: 49vh;
-  width: 49vw;
+  height: 49%;
+  width: 49%;
   top: 5%;
   left: 25%;
   padding: 0.5vw;
   background: rgb(0, 0, 0);
-  box-shadow: 0px 0px 10px 5px rgba(100, 100, 100, 0.1);
+  box-shadow: 0px 0px 1vw 1vw rgba(6, 6, 6, 0.5);
   text-align: center;
 }
-@media only screen and (max-width: 901px) {
+/* @media only screen and (max-width: 600px) {
   #ScreenFrame {
     position: absolute;
     height: 30vh;
@@ -21,47 +21,41 @@
   #CounterText {
     font-size: 50vw;
   }
-}
+} */
 /* Turn Screen On to see Frame GLow Animation */
 #ScreenFrame.ON {
-  transition: 3s;
-  animation-name: ScreenGlow;
-  animation-iteration-count: infinite;
-  animation-duration: 60s;
-  animation-delay: 3s;
-  animation-direction: normal;
-  box-shadow: 0 0px 10px 5px rgba(128, 0, 128, 0.5);
+  animation: ScreenGlow 60s 0s alternate infinite ;
 }
 @keyframes ScreenGlow {
   0% {
-    box-shadow: 0 0px 10px 5px rgba(128, 0, 128, 0.5);
+    box-shadow: 0 0vw .7vw 0.3vw rgba(128, 0, 128, 0.5);
   }
   14.2% {
-    box-shadow: 0 0px 10px 5px rgb(255, 0, 93);
+    box-shadow: 0 0vw .7vw 0.3vw rgb(255, 0, 93);
   }
 
   28.5% {
-    box-shadow: 0 0px 10px 5px rgba(124, 0, 0, 0.495);
+    box-shadow: 0 0vw .7vw 0.3vw rgba(124, 0, 0, 0.495);
   }
 
   42.8% {
-    box-shadow: 0 0px 10px 5px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0vw .7vw 0.3vw rgba(255, 0, 0, 0.5);
   }
 
   57.1% {
-    box-shadow: 0 0px 10px 5px rgba(255, 166, 0, 0.5);
+    box-shadow: 0 0vw .7vw 0.3vw rgba(255, 166, 0, 0.5);
   }
 
   71.4% {
-    box-shadow: 0 0px 10px 5px rgba(255, 255, 0, 0.5);
+    box-shadow: 0 0vw .7vw 0.3vw rgba(255, 255, 0, 0.5);
   }
 
   85.7% {
-    box-shadow: 0 0px 10px 5px rgba(0, 128, 0, 0.5);
+    box-shadow: 0 0vw .7vw 0.3vw rgba(0, 128, 0, 0.5);
   }
 
   100% {
-    box-shadow: 0 0px 10px 5px rgba(0, 0, 255, 0.5);
+    box-shadow: 0 0vw .7vw 0.3vw rgba(0, 0, 255, 0.5);
   }
 }
 
@@ -72,7 +66,7 @@
   width: 100%;
   vertical-align: middle;
   margin: 0 auto;
-  box-shadow: 0 10px 20px 10px black;
+  box-shadow: 0 1vw 1vw .1vw black;
 }
 
 #Screen.OFF {
@@ -98,13 +92,13 @@
     background: rgb(100, 100, 100);
   }
   20% {
-    background: rgb(15, 15, 15);
+    background: rgb(7, 7, 7);
   }
 }
 #Screen.ON {
   animation: none;
   background: white;
-  box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.444), inset 0 0 10px 10px black;
+  box-shadow: 0 0px 100px 0px rgba(255, 255, 255, 0.35), inset 0 0 10px 10px black;
 }
 #Screen.ON.Dark {
   background: rgb(15, 15, 15);
@@ -130,12 +124,15 @@
 #CounterText.ON {
   color: rgb(255, 30, 30);
   text-shadow: 0 0 0.467vw;
+  display: inline-block;
 }
 #offSign {
-  height: 6%;
-  width: 6%;
-  vertical-align: middle;
-  opacity: .5;
+  display: inline-block;
+  max-width: 2.667vw;
+  height: auto;
+  width: auto;
+  transform: translate(0, 400%);
+  opacity: .1;
 }
 #RotatingCircle {
   position: relative;
