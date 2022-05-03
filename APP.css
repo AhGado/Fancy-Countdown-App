@@ -1,7 +1,7 @@
 * {
   transition: 0.3s;
   user-select: none;
-  text-shadow: 0 0 2px rgb(0, 0, 0);
+  text-shadow: 0 0 0.267vw rgb(0, 0, 0);
   border: none;
   border-radius: 0;
   margin: 0 auto;
@@ -19,22 +19,25 @@ body {
   height: 100vh;
   position: fixed;
 }
-
+body > * {
+  transform: scale(1);
+}
 #bgimage {
   display: inline;
   position: absolute;
-  background-image: url("images/brick wall (2).jpg");
-  filter: blur(10px);
+  background-image: url("images/brick\ wall\ \(2\).jpg");
+  filter: blur(1.333vw);
   border: none;
-  transform: scale(1);
+  transform: scale(1.5) rotate(90deg);
   /* Full height */
   width: 100%;
   height: 150%;
   /* Center and scale the image nicely */
-  background-position: center;
+  background-position: 25% 10%;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
+  transition: 0;
 }
 #bgimage.OFF {
   filter: brightness(0.3);
@@ -43,32 +46,34 @@ body {
 #InputNo {
   position: absolute;
   display: block;
-  background: rgba(96, 96, 96, 0.5);
-  color: rgba(0, 0, 0,.2);
+  background: rgba(96, 96, 96, 0.4);
+  color: rgba(96, 96, 96, 0.5);
   width: 10%;
   height: 10%;
   margin: 0 auto;
-  top: 68%;
+  top: 60%;
   left: 45%;
   text-align: center;
-  text-shadow: 0 0 5px black;
+  text-shadow: 0 0 0.367vw rgb(49, 49, 49);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 21pt;
+  font-size: 3vw;
+  font-style: oblique;
   user-select: auto red;
-  box-shadow: inset 0 0 10px 5px rgb(36, 36, 36);
+  transition: .5s;
 }
 
 #InputNo:focus {
+  font-style: normal;
   color: rgb(52, 255, 214);
-  text-shadow: 0 0 5px;
-  box-shadow: inset 0 0 10px 5px rgb(99, 240, 240);
+  text-shadow: 0 0 0.667vw;
+  box-shadow: inset 0 0 .5vw 0.167vw rgb(99, 240, 240);
   animation: InputLighting normal 5s infinite ease-in-out;
 }
 @keyframes InputLighting {
-  0%{
+  0% {
     filter: hue-rotate(0deg);
   }
-  100%{
+  100% {
     filter: hue-rotate(360deg);
   }
 }
@@ -80,9 +85,9 @@ input[type="number"]::-webkit-inner-spin-button {
   position: absolute;
   margin: 0 auto;
   height: fit-content;
-  top: 54%;
+  top: 54vh;
   width: 50vw;
-  left: 25%;
+  left: 25vw;
 }
 .Button {
   position: relative;
@@ -98,21 +103,20 @@ input[type="number"]::-webkit-inner-spin-button {
   font-weight: bold;
   margin: 5%;
   border-radius: 5%;
-  box-shadow: 0 .3vw 0px -.05vw rgba(255, 255, 255, .5);
+  box-shadow: 0 0.3vw 0vw -0.05vw rgba(255, 255, 255, 0.5);
 }
 .Button:hover {
   color: white;
   cursor: pointer;
-  text-shadow: 0 0 5px;
+  text-shadow: 0 0 0.667vw;
   background: rgb(255, 0, 0);
 }
-.Button.Active, .Button:active {
-  box-shadow: inset  0 .3vw 0px -.05vw rgba(0, 0, 0, 0.492);
+.Button.Active,
+.Button:active {
+  box-shadow: inset 0 0.3vw 0vw -0.05vw rgba(0, 0, 0, 0.492);
   filter: grayscale();
-  transform: translateY(.3vw) ;
-}
-.Button:active{
-  transition: .1s;
+  transform: translateY(0.3vw);
+  transition: 0.1s;
 }
 #OnOffBtn {
   float: left;
@@ -120,4 +124,122 @@ input[type="number"]::-webkit-inner-spin-button {
 #StartBtn,
 #StopBtn {
   float: right;
+}
+
+#Sign {
+  --color:rgb(255, 0, 187);
+  background: rgba(255, 255, 0, 0.103);
+  position: absolute;
+  left: 10vw;
+  top: 15vh;
+  width: 10vw;
+  height: 12vh;
+  max-height: fit-content;
+  offset-anchor: top left ;
+  transform-origin: top left;
+  border: .1vw groove rgb(255, 255, 255);
+  box-shadow: inset 0 0 1vw var(--color), 0 0 1.333vw 0.267vw var(--color);
+  padding: 2vh;
+  --startingPos: 55deg;
+  --endingPos: 75deg;
+  animation: initialFall 3s 1s ease-in-out normal,
+    SignHanging 2s 4s infinite ease-in-out alternate,
+    SignFlashing 3s 1.2s infinite alternate;
+}
+@keyframes initialFall {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(120deg);
+  }
+  40%{
+    transform: rotate(25deg);
+  }
+  70%{
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(var(--startingPos));
+  }
+}
+@keyframes SignHanging {
+  0% {
+    transform: rotate(var(--startingPos));
+  }
+  100% {
+    transform: rotate(var(--endingPos));
+  }
+}
+@keyframes SignFlashing {
+  0% {
+    box-shadow: none;
+  }
+  1% {
+    box-shadow: inset 0 0 1vw var(--color), 0 0 1.333vw 0.267vw var(--color);
+  }
+  2% {
+    box-shadow: none;
+  }
+  3% {
+    box-shadow: inset 0 0 1vw var(--color), 0 0 1.333vw 0.267vw var(--color);
+  }
+  6% {
+    box-shadow:  none;
+  }
+  7%{
+    box-shadow: inset 0 0 1vw var(--color), 0 0 1.333vw 0.267vw var(--color);
+    }  
+  100%{
+  box-shadow: inset 0 0 1vw var(--color), 0 0 1.333vw 0.267vw var(--color);
+  }
+}
+#SignBolts{
+  display: inline;
+}
+#SignBolts *{
+  margin: -1.6vh;
+  height: .2vw;
+  width:.2vw;
+  background: rgb(250, 255, 157);
+  border: 0.167vw solid rgb(92, 43, 0);
+  border-radius: 1.333vw;
+}
+#Bolt-1{
+float: left;
+}
+#Bolt-2{
+  float: right;
+}
+#SignText{
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+#SignText span{
+  width: fit-content;
+  padding:2px 15px;
+  /* animation: SignFlashing 3s 1.2s infinite alternate; */
+  display: inline-block;
+  margin: 1vw auto;
+  margin-top: 0;
+  font-family: fantasy;
+  letter-spacing: .4vw;
+  font-size: 1.5vw;
+  text-align: center;
+  text-decoration: dotted;
+}
+#SignText span:nth-child(1){
+  --color:rgb(255, 0, 21);
+  border: 0.1vw dashed white;
+  box-shadow: 0 0 0.533vw 0.133vw;
+  color: var(--color);
+  text-shadow: 0 0 0.667vw;
+}
+#SignText span:nth-child(2){
+  --color:rgb(80, 255, 80);
+  border: 0.1vw dashed white;
+  box-shadow: 0 0 0.533vw 0.133vw;
+  color: rgb(80, 255, 80);
+  text-shadow: 0 0 0.667vw;
 }
