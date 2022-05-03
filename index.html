@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <span id="bgimage"></span>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancy Counter</title>
+    <link rel="stylesheet" href="APP.css" />
+    <link rel="stylesheet" href="Screen.css" />
+    <!-- <link rel="stylesheet" href="Visual.css" /> -->
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    ></script>
+    <!-- <script type="text/javascript" src="APP.js"></script> -->
+    <script type="text/javascript" src="App Functionality.js"></script>
+  </head>
+
+  <body>
+    <div id="bgimage" class="Switchable OFF"></div>
+
+    <div id="Sign">
+      <div id="SignBolts">
+        <span id="Bolt-1"></span><span id="Bolt-2"></span>
+      </div>
+      <div id="SignText">
+        <span>Fancy</span>
+        <span>Counter</span>
+      </div>
+    </div>
+
+    <div id="ScreenFrame" class="Switchable OFF">
+      <div id="Screen" class="Light Switchable OFF">
+        <div id="CounterText" class="Switchable OFF">
+          <img id="offSign" src="images//Off sign.png" />
+        </div>
+        <!-- <div id="RotatingCircle" class="OFF"></div> -->
+      </div>
+    </div>
+
+    <div id="Buttons">
+      <div id="OnOffBtn" class="Button" title="Screen On/Off">
+        <img
+          src="images//turn off 2.png"
+          style="max-width: 90%; max-height: 90%"
+        />
+      </div>
+      <div id="ModeSwitch" class="Button Active" title="Light/Dark Mode">
+        <img
+          src="images//LightDark 2.png"
+          style="max-width: 90%; max-height: 90%"
+        />
+      </div>
+      <div id="StopBtn" class="Button Active" title="Stop Counter">
+        <img
+          src="images//Stop 2.png"
+          style="max-width: 100%; max-height: 100%"
+        />
+      </div>
+      <div id="StartBtn" class="Button Active" title="Start Counter">
+        <img
+          src="images//Play 2.png"
+          style="max-width: 100%; max-height: 100%"
+        />
+      </div>
+    </div>
+
+    <input
+      id="InputNo"
+      class="Changeable"
+      type="number"
+      min="0"
+      value="10"
+      required
+      autofocus
+    />
+  </body>
+</html>
