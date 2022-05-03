@@ -129,7 +129,7 @@
 }
 #CounterText.ON {
   color: rgb(255, 30, 30);
-  text-shadow: 0 0 5px;
+  text-shadow: 0 0 0.467vw;
 }
 #offSign {
   height: 6%;
