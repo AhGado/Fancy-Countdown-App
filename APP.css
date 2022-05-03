@@ -127,6 +127,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #Sign {
+  display: inline-block;
   --color:rgb(255, 0, 187);
   background: rgba(255, 255, 0, 0.103);
   position: absolute;
