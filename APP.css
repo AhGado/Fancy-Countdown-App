@@ -27,14 +27,15 @@ body>* {
 #bgimage {
   display: inline;
   position: absolute;
-  background-image: url("images/Neon\ hex.jpg");
+  background: rgb(25, 25, 25);
+  /* background-image: url("images/Neon\ hex.jpg"); */
   /* Full height */
   width: 100%;
   height: 100%;
   /* Center and scale the image nicely */
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-size: 110%;
-  z-index: -1;
+  z-index: -1; */
   transition: .5s;
   border: none;
 }
